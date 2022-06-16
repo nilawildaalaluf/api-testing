@@ -4,13 +4,13 @@ const router = express.Router();
 // const PORT = process.env.PORT || 5050;
 const { books } = require("../handlers/books");
 
-router.get("/books", books);
+// router.get("/books", books);
 
 router.get("/", (req, res) => {
   res.send("This is my demo project");
 });
 
-app.use("/.netlify/src/index", router);
+app.use("/books", books);
 
 module.exports.handler = serverless(app);
 
